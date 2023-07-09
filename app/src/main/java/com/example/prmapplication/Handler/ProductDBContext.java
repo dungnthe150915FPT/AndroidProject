@@ -126,5 +126,4 @@ public class ProductDBContext extends SQLiteOpenHelper {
         }
         return products;
     }
-
 }
