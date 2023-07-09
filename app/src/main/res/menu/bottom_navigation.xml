@@ -4,17 +4,14 @@
 
     <item
             android:title="@string/home"
-            android:id="@+id/home"
+            android:id="@+id/btnHome"
             android:icon="@android:mipmap/sym_def_app_icon"/>
     <item
             android:title="@string/shop"
             android:icon="@drawable/icon_shop"
-            android:id="@+id/shop"
-            >
-
-    </item>
+            android:id="@+id/btnShop"/>
     <item
             android:title="@string/profile"
-            android:id="@+id/profile"
+            android:id="@+id/btnProfile"
             android:icon="@drawable/icon_user"/>
 </menu>

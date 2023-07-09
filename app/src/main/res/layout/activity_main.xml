@@ -8,12 +8,11 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/bottom_navigation"
-            app:menu="@menu/bottom_navigation"
+            android:id="@+id/main_bottom_navigation"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="0dp"
             app:itemTextColor="#000000"
@@ -24,7 +23,7 @@
             android:backgroundTintMode="src_over"
             app:compatShadowEnabled="true"
             app:itemIconTint="@null"
-            />
+            app:menu="@menu/bottom_navigation"/>
 
     <TextView
             android:layout_width="wrap_content"
@@ -37,10 +36,22 @@
             app:layout_constraintHorizontal_bias="0.461"
             app:layout_constraintVertical_bias="0.161"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="154dp"
+            android:layout_marginStart="181dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="139dp"/>
+            android:layout_marginTop="566dp"/>
 
+    <androidx.fragment.app.FragmentContainerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.example.prmapplication.Fragment.HomeFragment"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:id="@+id/fragmentContainerViewMainActivity"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="70dp"
+            tools:layout="@layout/fragment_shop"/>
 
 
 </RelativeLayout>
