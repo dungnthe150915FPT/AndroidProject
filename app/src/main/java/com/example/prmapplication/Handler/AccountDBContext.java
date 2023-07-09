@@ -11,32 +11,31 @@ import com.example.prmapplication.Models.Account;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseHandler extends SQLiteOpenHelper {
+public class AccountDBContext extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "Sakura";
     private static final int DATABASE_VERSION = 1;
-    private static final String TABLE_ACCOUNT = "Account";
 
+    private static final String TABLE_ACCOUNT = "Account";
     private static final String ACCOUNT_KEY_ID = "id";
     private static final String ACCOUNT_KEY_USERNAME = "username";
     private static final String ACCOUNT_KEY_PASSWORD = "password";
     private static final String ACCOUNT_KEY_EMAIL = "email";
     private static final String ACCOUNT_KEY_PHONE = "phone";
+    private static final String CREATE_ACCOUNT_DB = "CREATE TABLE " + TABLE_ACCOUNT + "("
+            + ACCOUNT_KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + ACCOUNT_KEY_USERNAME + " TEXT,"
+            + ACCOUNT_KEY_PASSWORD + " TEXT,"
+            + ACCOUNT_KEY_EMAIL + " TEXT,"
+            + ACCOUNT_KEY_PHONE + " TEXT" + ")";
 
-    public DatabaseHandler(@Nullable Context context) {
+    public AccountDBContext(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // create table Account if not exists
-        String CREATE_ACCOUNT_TABLE = "CREATE TABLE " + TABLE_ACCOUNT + "("
-                + ACCOUNT_KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + ACCOUNT_KEY_USERNAME + " TEXT,"
-                + ACCOUNT_KEY_PASSWORD + " TEXT,"
-                + ACCOUNT_KEY_EMAIL + " TEXT,"
-                + ACCOUNT_KEY_PHONE + " TEXT" + ")";
-        db.execSQL(CREATE_ACCOUNT_TABLE);
+        db.execSQL(CREATE_ACCOUNT_DB);
     }
 
     @Override
@@ -73,7 +72,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public Account getAccount(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_ID + " = " + id, null);
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_ID + " = " + id, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
@@ -84,7 +84,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     public Account getAccount(String username) {
         SQLiteDatabase db = this.getReadableDatabase();
-        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_USERNAME + " = '"
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_USERNAME + " = '"
                 + username + "'", null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -94,10 +95,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 cursor.getString(3), cursor.getString(4));
     }
 
-    // get Account by username and password
     public Account getAccount(String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_USERNAME + " = '"
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_USERNAME + " = '"
                 + username + "' AND " + ACCOUNT_KEY_PASSWORD + " = '" + password + "'", null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -107,12 +108,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 cursor.getString(3), cursor.getString(4));
     }
 
-    // get all Accounts
     public List<Account> getAllAccounts() {
         List<Account> accountList = new ArrayList<Account>();
         String selectQuery = "SELECT * FROM " + TABLE_ACCOUNT;
         SQLiteDatabase db = this.getWritableDatabase();
-        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(selectQuery, null);
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
                 Account account = new Account();
@@ -127,29 +128,27 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return accountList;
     }
 
-    // get username exists
     public Boolean checkUsernameExists(String username) {
         SQLiteDatabase db = this.getReadableDatabase();
-        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_USERNAME + " = '"
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_USERNAME + " = '"
                 + username + "'", null);
         return cursor.getCount() > 0;
     }
 
-    // get email exists
     public Boolean checkEmailExists(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
-        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_EMAIL + " = '"
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_EMAIL + " = '"
                 + email + "'", null);
         return cursor.getCount() > 0;
     }
 
-    // get phone exists
     public Boolean checkPhoneExists(String phone) {
         SQLiteDatabase db = this.getReadableDatabase();
-        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_PHONE + " = '"
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " + ACCOUNT_KEY_PHONE + " = '"
                 + phone + "'", null);
         return cursor.getCount() > 0;
     }
-
-    
 }
