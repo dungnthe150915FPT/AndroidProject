@@ -44,4 +44,6 @@ public class ItemAdapter_Home_News extends RecyclerView.Adapter<ItemHolder_Home_
     public int getItemCount() {
         return news.size();
     }
+
+
 }
