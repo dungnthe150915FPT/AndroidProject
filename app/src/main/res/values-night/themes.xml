@@ -4,4 +4,31 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <!--Settings-->
+    <style name="settings" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/primary_settings</item>
+    </style>
+    <style name="text_settings" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="nightModeSwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/night_mode_settings</item>
+        <item name="colorSwitchThumbNormal">#FFFFFF</item>
+        <item name="android:colorForeground">#99FFFFFF</item>
+    </style>
+
+    <style name="notificationSwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/notifications_settings</item>
+        <item name="colorSwitchThumbNormal">#FFFFFF</item>
+        <item name="android:colorForeground">#99FFFFFF</item>
+    </style>
+
+    <style name="privacySwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/private_account_settings</item>
+        <item name="colorSwitchThumbNormal">#FFFFFF</item>
+        <item name="android:colorForeground">#99FFFFFF</item>
+    </style>
+    <!--Settings-->
 </resources>
