@@ -17,13 +17,13 @@ public class ItemAdapter_Home_News extends RecyclerView.Adapter<ItemHolder_Home_
 
     private List<News> news = new ArrayList<>();
 
-    private Context contex;
+    private Context context;
 
     private LayoutInflater inflater;
 
     public ItemAdapter_Home_News(List<News> news, Context context) {
         this.news = news;
-        this.contex = context;
+        this.context = context;
         inflater = LayoutInflater.from(context);
     }
 
