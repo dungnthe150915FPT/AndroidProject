@@ -3,4 +3,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transfe">#00FFFFFF</color>
+
+    <!--Settings-->
+    <color name="primary_settings">#1B023B</color>
+    <color name="secondary_settings">#FF03DAC5</color>
+    <color name="night_mode_settings">#6124B1</color>
+    <color name="notifications_settings">#13B2C3</color>
+    <color name="private_account_settings">#E6A326</color>
+    <color name="security_settings">#D95F69</color>
+    <!--Settings-->
 </resources>
