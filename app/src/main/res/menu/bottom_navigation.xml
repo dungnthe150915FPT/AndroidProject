@@ -14,4 +14,8 @@
             android:title="@string/profile"
             android:id="@+id/btnProfile"
             android:icon="@drawable/icon_user"/>
+    <item
+            android:title="@string/playGame"
+            android:id="@+id/btnPlayGame"
+            android:icon="@android:drawable/ic_media_play"/>
 </menu>

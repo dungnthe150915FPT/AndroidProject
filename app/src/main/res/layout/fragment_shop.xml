@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".Fragment.ShopFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/shop"/>
+            android:layout_height="match_parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/rcvShopWeapon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnOpenGame"/>
+
+        <Button
+                android:text="@string/todo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnOpenGame"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rcvShopWeapon"
+                android:backgroundTint="#008CF6"
+                android:backgroundTintMode="src_over"
+                android:textColor="#212121"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

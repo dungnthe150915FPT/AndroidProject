@@ -1,6 +1,7 @@
 package com.example.prmapplication.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,8 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.prmapplication.R;
-import com.example.prmapplication.Recycler.ItemAdapter_Home_News;
-import com.example.prmapplication.Recycler.ItemHolder_Home_News;
+import com.example.prmapplication.Recycler.Home.ItemAdapter_Home_News;
 
 public class HomeFragment extends Fragment {
 
@@ -62,39 +62,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void addData() {
-        // News news = new News();
-        // news.setTitle("TitleTest");
-        // news.setDescription("DescriptionTest");
-        // news.setDate("DateTest");
-        // news.setImage("ImageTest");
-        // news.setContent("ContentTest");
-        // add news to database
-        // newsDBContext = new NewsDBContext(getContext());
-        // newsDBContext.addNews(news);
-
-        // newsDBContext = new NewsDBContext(getContext());
-        // // update news to database
-        // News news = newsDBContext.getNewsById(1);
-        // // real data to news
-        // news.setTitle("Thị trường game Việt đặt mục tiêu tỷ USD");
-        // news.setDescription("Tại Diễn đàn Game Việt 2023, đại diện Bộ Thông tin và
-        // Truyền thông cho biết Bộ đặt kế hoạch sau 5 năm, doanh thu ngành game tăng từ
-        // 600 triệu USD lên một tỷ USD.");
-        // news.setDate("2023-04-01");
-        // news.setImage("https://upcdn.io/FW25bVU/raw/7777-jpeg-1680327297-8997-1680327305.jpg");
-        // news.setContent("Ông Antoine Brochet nói, khi một nhà phát triển game nghĩ
-        // đến việc thâm nhập thị trường mới, điều quan trọng là họ phải hiểu những đặc
-        // điểm độc đáo của thị trường (về hành vi người dùng, thói quen chi tiêu, văn
-        // hóa, ngôn ngữ, chiến thuật kinh doanh). Đi cùng, đơn vị phải tìm hiểu xem
-        // những thị trường nào khác có chung những đặc điểm đó. Những kiến thức họ có
-        // về những đặc điểm này sẽ giúp họ có lợi thế khi thâm nhập vào những thị
-        // trường mới đó.");
-        // newsDBContext.updateNews(news);
         newsDBContext = new NewsDBContext(getContext());
-//        List<News> news = newsDBContext.getAllNews();
-//        if (!news.isEmpty()) {
-//            return;
-//        }
         List<News> newsList = new ArrayList<>();
         newsList.add(new News(
                 "Game nuôi mèo \"Duet Cats\" của startup Việt Amanotes đang khuấy đảo thị trường game âm nhạc Mỹ như thế nào?",
@@ -111,7 +79,6 @@ public class HomeFragment extends Fragment {
                 "2023-03-02",
                 "https://cafefcdn.com/thumb_w/640/203337114487263232/2023/1/7/photo1673052915746-16730529158461222567544.jpg",
                 "Theo thống kê của Cục Phát thanh Truyền hình và Thông tin Điện tử, Bộ Thông tin và Truyền thông, thời gian qua, ngành kinh doanh trò chơi tại Việt Nam tăng trưởng mạnh mẽ. Tại Việt Nam, ước tính có khoảng gần 28,5 triệu người chơi. Năm 2021, tổng doanh thu từ thị trường game Việt đạt khoảng 665 triệu USD, xếp thứ 5 khu vực Đông Nam Á. Doanh thu các trò chơi sản xuất tại Việt Nam phát hành ở thị trường toàn cầu lên đến 200 triệu USD/năm. 50% tựa trò chơi di động được chơi nhiều nhất có nguồn gốc từ Việt Nam, 5/10 công ty trò chơi hàng đầu châu Á - Thái Bình Dương và Australia là của Việt Nam. Tuy nhiên, số tiền đóng thuế cho Nhà nước Việt Nam chỉ chiếm 50%, còn lại là các cá nhân, tổ chức đóng thuế cho nước ngoài, chủ yếu ở Singapore."));
-
         for (News news2 : newsList) {
             newsDBContext.addNews(news2);
         }
