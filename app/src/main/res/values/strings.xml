@@ -96,4 +96,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="playGame">Play Game</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
 </resources>
