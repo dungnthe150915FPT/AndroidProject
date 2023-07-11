@@ -107,7 +107,14 @@ public class AccountDBContext extends SQLiteOpenHelper {
         return new Account(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2),
                 cursor.getString(3), cursor.getString(4));
     }
-
+    public boolean checkUser(String username, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_ACCOUNT + " WHERE " +
+                ACCOUNT_KEY_USERNAME + " = ? AND " + ACCOUNT_KEY_PASSWORD + " = ?", new String[]{username, password});
+        boolean result = cursor.getCount() > 0;
+        cursor.close();
+        return result;
+    }
     public List<Account> getAllAccounts() {
         List<Account> accountList = new ArrayList<Account>();
         String selectQuery = "SELECT * FROM " + TABLE_ACCOUNT;

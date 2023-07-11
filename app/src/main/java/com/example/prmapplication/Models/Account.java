@@ -1,5 +1,7 @@
 package com.example.prmapplication.Models;
 
+import android.widget.TextView;
+
 public class Account {
     // id, username, password, email, phone number
     private int id;
@@ -22,11 +24,15 @@ public class Account {
         this.password = password;
         this.email = email;
         this.phone = phone;
-
     }
 
     public Account() {
     }
+
+    public Account(TextView username, TextView password, TextView email, TextView phone) {
+
+    }
+
 
     public int getId() {
         return id;
