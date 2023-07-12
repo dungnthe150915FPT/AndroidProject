@@ -58,7 +58,7 @@ public class ItemHolder_Home_News extends RecyclerView.ViewHolder {
         AppCompatActivity activity = (AppCompatActivity) view.getContext();
         FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainerViewMainActivity, fragment);
-        transaction.addToBackStack(null);
+        //transaction.addToBackStack(null);
         transaction.commit();
 
     }
@@ -73,7 +73,7 @@ public class ItemHolder_Home_News extends RecyclerView.ViewHolder {
     @SuppressLint("SetTextI18n")
     public void setData(News newItem) {
         this.newItem = newItem;
-        txtTitle.setText(newItem.getId() + " " +newItem.getTitle());
+        txtTitle.setText(newItem.getTitle());
         txtDescription.setText(newItem.getDescription());
         txtDate.setText(newItem.getDate());
         Glide.with(context)

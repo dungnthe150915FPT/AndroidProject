@@ -63,7 +63,7 @@ public class ItemHolder_Shop_Weapon extends RecyclerView.ViewHolder {
         AppCompatActivity activity = (AppCompatActivity) view.getContext();
         FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainerViewMainActivity, fragment);
-        transaction.addToBackStack(null);
+        //transaction.addToBackStack(null);
         transaction.commit();
     }
 

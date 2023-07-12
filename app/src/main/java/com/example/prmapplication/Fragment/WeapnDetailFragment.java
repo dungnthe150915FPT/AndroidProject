@@ -63,7 +63,7 @@ public class WeapnDetailFragment extends Fragment {
         AppCompatActivity activity = (AppCompatActivity) view.getContext();
         FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fragmentContainerViewWeaponDetail, fragment);
-        transaction.addToBackStack(null);
+        //transaction.addToBackStack(null);
         transaction.commit();
     }
 
