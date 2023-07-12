@@ -98,4 +98,12 @@
     <string name="playGame">Play Game</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="fireRate">Fire Rate</string>
+    <string name="damage">Damage</string>
+    <string name="ammo">Ammo</string>
+    <string name="bSpeed">BSpeed</string>
+    <string name="get">Get</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="guideBook">Guide Book</string>
 </resources>

@@ -17,21 +17,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginBottom="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/btnOpenGame"/>
-
-        <Button
-                android:text="@string/todo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/btnOpenGame"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rcvShopWeapon"
-                android:backgroundTint="#008CF6"
-                android:backgroundTintMode="src_over"
-                android:textColor="#212121"/>
+                />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

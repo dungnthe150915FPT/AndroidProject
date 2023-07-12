@@ -1,5 +1,6 @@
 package com.example.prmapplication.Recycler.Home;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -69,9 +70,10 @@ public class ItemHolder_Home_News extends RecyclerView.ViewHolder {
         bindingAction();
     }
 
+    @SuppressLint("SetTextI18n")
     public void setData(News newItem) {
         this.newItem = newItem;
-        txtTitle.setText(newItem.getTitle());
+        txtTitle.setText(newItem.getId() + " " +newItem.getTitle());
         txtDescription.setText(newItem.getDescription());
         txtDate.setText(newItem.getDate());
         Glide.with(context)

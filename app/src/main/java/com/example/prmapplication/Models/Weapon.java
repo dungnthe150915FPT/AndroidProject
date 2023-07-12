@@ -2,7 +2,9 @@ package com.example.prmapplication.Models;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Weapon {
+import java.io.Serializable;
+
+public class Weapon implements Serializable {
     // id, displayname, description, image, muzzleVelocity, fireRate, damage, ammo,
     // reloadTime, bulletSpeed, type, , fireMode, price
     private int id;

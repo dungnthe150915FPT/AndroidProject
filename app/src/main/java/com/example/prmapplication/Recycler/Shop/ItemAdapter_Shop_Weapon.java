@@ -26,11 +26,6 @@ public class ItemAdapter_Shop_Weapon extends RecyclerView.Adapter<ItemHolder_Sho
         this.inflater = LayoutInflater.from(context);
     }
 
-    public ItemAdapter_Shop_Weapon(Context context) {
-        this.context = context;
-        this.inflater = LayoutInflater.from(context);
-    }
-
     @NonNull
     @NotNull
     @Override
